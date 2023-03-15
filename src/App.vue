@@ -1,30 +1,32 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
+<script lang="ts" setup></script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <h1>1、成功加载按钮组件</h1>
+  <div class="app-container">
+    <el-row class="mb-4">
+      <el-button>Default</el-button>
+      <el-button type="primary">Primary</el-button>
+      <el-button type="success">Success</el-button>
+      <el-button type="info">Info</el-button>
+      <el-button type="warning">Warning</el-button>
+      <el-button type="danger">Danger</el-button>
+    </el-row>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <h1>2、成功加载图标</h1>
+  <div>
+    <el-icon size="38" color="red">
+      <Delete />
+    </el-icon>
+  </div>
+  <h2>3、直接使用图标</h2>
+  <div style="font-size: 20px">
+    <!-- 由于SVG图标默认不携带任何属性 -->
+    <!-- 你需要直接提供它们 -->
+    <Edit style="width: 1em; height: 1em; margin-right: 8px" />
+    <Share style="width: 1em; height: 1em; margin-right: 8px" />
+    <Delete style="width: 1em; height: 1em; margin-right: 8px" />
+    <Search style="width: 1em; height: 1em; margin-right: 8px" />
+  </div>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<style scoped></style>

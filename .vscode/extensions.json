@@ -1,3 +1,12 @@
 {
-  "recommendations": ["Vue.volar", "Vue.vscode-typescript-vue-plugin"]
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "vue.vscode-typescript-vue-plugin",
+    "vue.volar",
+    "antfu.unocss",
+    "zixuanchen.vitest-explorer",
+    "wiensss.region-highlighter"
+  ]
 }
