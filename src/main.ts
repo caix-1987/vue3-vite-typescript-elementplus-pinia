@@ -10,6 +10,7 @@ import { loadPlugins } from "@/plugins";
 
 // css
 import "element-plus/dist/index.css";
+import "@/styles/index.scss";
 
 const app = createApp(App);
 
