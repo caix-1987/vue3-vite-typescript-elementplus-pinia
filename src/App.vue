@@ -24,7 +24,9 @@ ElNotification({
 
 <template>
   <!-- Element Plus 提供了一个 Vue 组件 ConfigProvider 用于全局配置国际化的设置 -->
-  <ElConfigProvider :locale="locale"></ElConfigProvider>
+  <ElConfigProvider :locale="locale">
+    <router-view></router-view>
+  </ElConfigProvider>
 </template>
 
 <style scoped></style>

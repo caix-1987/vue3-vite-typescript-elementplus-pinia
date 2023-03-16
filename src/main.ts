@@ -1,5 +1,6 @@
 import { createApp } from "vue";
 import App from "@/App.vue";
+import router from "@/router";
 
 // load
 import { loadPlugins } from "@/plugins";
@@ -12,4 +13,4 @@ const app = createApp(App);
 /* 加载插件 */
 loadPlugins(app);
 
-app.mount("#app");
+app.use(router).mount("#app");
