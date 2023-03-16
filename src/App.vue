@@ -1,32 +1,30 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { h } from "vue";
+import { ElNotification } from "element-plus";
+import zhCn from "element-plus/lib/locale/lang/zh-cn";
+
+/*
+ * Element Plus 组件 默认 使用英语
+ * 将 Element Plus 设置为中文
+ */
+const locale = zhCn;
+
+/* 一个问候弹出框 */
+ElNotification({
+  title: "你好",
+  message: h(
+    "a",
+    { style: "color:teal", target: "_blink", href: "" },
+    "欢迎来到 vue3 + vite + ElementPlus + pinia"
+  ),
+  duration: 0,
+  position: "top-right",
+});
+</script>
 
 <template>
-  <h1>1、成功加载按钮组件</h1>
-  <div class="app-container">
-    <el-row class="mb-4">
-      <el-button>Default</el-button>
-      <el-button type="primary">Primary</el-button>
-      <el-button type="success">Success</el-button>
-      <el-button type="info">Info</el-button>
-      <el-button type="warning">Warning</el-button>
-      <el-button type="danger">Danger</el-button>
-    </el-row>
-  </div>
-  <h1>2、成功加载图标</h1>
-  <div>
-    <el-icon size="38" color="red">
-      <Delete />
-    </el-icon>
-  </div>
-  <h2>3、直接使用图标</h2>
-  <div style="font-size: 20px">
-    <!-- 由于SVG图标默认不携带任何属性 -->
-    <!-- 你需要直接提供它们 -->
-    <Edit style="width: 1em; height: 1em; margin-right: 8px" />
-    <Share style="width: 1em; height: 1em; margin-right: 8px" />
-    <Delete style="width: 1em; height: 1em; margin-right: 8px" />
-    <Search style="width: 1em; height: 1em; margin-right: 8px" />
-  </div>
+  <!-- Element Plus 提供了一个 Vue 组件 ConfigProvider 用于全局配置国际化的设置 -->
+  <ElConfigProvider :locale="locale"></ElConfigProvider>
 </template>
 
 <style scoped></style>
