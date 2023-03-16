@@ -1,0 +1,35 @@
+@import "./variables.css";
+
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  background-color: var(--caix-body-bg-color);
+  margin: 0;
+  padding: 0;
+}
+#app {
+  height: 100%;
+}
+.app-container {
+  padding: 20px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+a,
+a:focus,
+a:hover {
+  color: inherit;
+  outline: none;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
