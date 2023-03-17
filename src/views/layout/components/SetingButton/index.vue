@@ -14,7 +14,7 @@
   right: 0;
   height: 48px;
   width: 48px;
-  background: #484848;
+  background: #001428;
   border-radius: 6px 0 0 6px;
   cursor: pointer;
   display: flex;

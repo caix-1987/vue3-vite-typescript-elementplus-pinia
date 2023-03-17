@@ -1,7 +1,7 @@
 /** 全局 CSS 变量，这种变量不仅可以在 CSS 和 SCSS 中使用，还可以导入到 JS 中使用 */
 
 :root {
-  --caix-sidebar-width: 220px;
+  --caix-sidebar-width: 240px;
   --caix-navigationBar-height: 56px;
   --caix-taglist-height: 36px;
   --caix-container-height: 100vh;

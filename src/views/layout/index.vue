@@ -52,6 +52,6 @@ import {
   right: 0;
   width: calc(100% - var(--caix-sidebar-width));
   transition: width 0.28s;
-  z-index: 99;
+  z-index: 9;
 }
 </style>
