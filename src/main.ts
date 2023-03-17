@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import App from "@/App.vue";
 import router from "@/router";
+import store from "@/store";
 
 /* vite 使用 import.meta.env 获取环境变量 */
 console.log("环境变量", import.meta.env);
@@ -17,4 +18,4 @@ const app = createApp(App);
 /* 加载插件 */
 loadPlugins(app);
 
-app.use(router).mount("#app");
+app.use(store).use(router).mount("#app");

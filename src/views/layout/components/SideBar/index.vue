@@ -1,7 +1,8 @@
 <script lang="ts" setup>
-import { useRouter, type RouteRecordRaw } from "vue-router";
+import { useRouter, useRoute, type RouteRecordRaw } from "vue-router";
 import { computed } from "vue";
 const routes = useRouter().options.routes;
+const route = useRoute();
 console.log("router", routes);
 </script>
 
@@ -15,8 +16,8 @@ console.log("router", routes);
       router
       background-color="#001428"
       text-color="#ffffff"
-      default-active="/home"
       popper-effect="light"
+      :default-active="route.path"
     >
       <template v-for="item in routes" :key="item.path">
         <el-sub-menu

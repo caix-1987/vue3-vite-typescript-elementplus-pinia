@@ -6,6 +6,29 @@ import {
   Container,
   SetingButton,
 } from "./components";
+import { watch } from "vue";
+import { useRoute } from "vue-router";
+import { useTagsViewStore } from "@/store/modules/tags";
+
+const route = useRoute();
+const tagsStore = useTagsViewStore();
+
+const addTag = () => {
+  if (route?.meta?.title) {
+    tagsStore.addTag(route);
+  }
+};
+
+watch(
+  route,
+  () => {
+    addTag();
+  },
+  {
+    deep: true,
+    immediate: true,
+  }
+);
 </script>
 
 <template>
