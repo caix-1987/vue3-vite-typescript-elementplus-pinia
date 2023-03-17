@@ -1,12 +1,25 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div class="app-SetingButton">SetingButton</div>
+  <div class="app-SetingButton">
+    <el-icon size="24"><Setting /></el-icon>
+  </div>
 </template>
 
 <style lang="scss" scoped>
 .app-SetingButton {
-  float: right;
-  padding: 20px;
+  background: yellow;
+  position: fixed;
+  bottom: 20px;
+  right: 0;
+  height: 48px;
+  width: 48px;
+  background: #484848;
+  border-radius: 6px 0 0 6px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
 }
 </style>

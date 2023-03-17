@@ -15,7 +15,7 @@ ElNotification({
   message: h(
     "a",
     { style: "color:teal", target: "_blink", href: "" },
-    "欢迎来到 vue3 + vite + ElementPlus + pinia"
+    "欢迎来到基于 vue3 + vite + ElementPlus + pinia 项目从 0 到 1 的完整实践"
   ),
   duration: 0,
   position: "top-right",

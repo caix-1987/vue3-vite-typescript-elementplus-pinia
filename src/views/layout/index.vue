@@ -38,12 +38,20 @@ import {
   z-index: 1001;
   overflow: hidden;
   background: var(--caix-sidebar-bg-color);
-  // border-right: solid var(--caix-sidebar-bg-color);
 }
 .main-container {
   min-height: 100%;
   transition: width 0.28s;
   position: relative;
   margin-left: var(--caix-sidebar-width);
+}
+.fixed-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  width: calc(100% - var(--caix-sidebar-width));
+  transition: width 0.28s;
+  z-index: 99;
 }
 </style>

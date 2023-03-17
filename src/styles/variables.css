@@ -2,8 +2,14 @@
 
 :root {
   --caix-sidebar-width: 220px;
+  --caix-navigationBar-height: 56px;
+  --caix-taglist-height: 36px;
+  --caix-container-height: 100vh;
+
   --caix-body-bg-color: #f2f3f5;
   --caix-sidebar-bg-color: #001428;
+  --caix-navigationBar-bg-color: #151515;
   --caix-taglist-bg-color: #ffffff;
+
   --caix-font-color-white: #ffffff;
 }

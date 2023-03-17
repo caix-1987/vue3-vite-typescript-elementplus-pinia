@@ -6,8 +6,9 @@
 
 <style lang="scss" scoped>
 .app-navigationBar {
-  background: var(--caix-sidebar-bg-color);
+  background: var(--caix-navigationBar-bg-color);
   color: var(--caix-font-color-white);
-  padding: 16px 10px;
+  height: var(--caix-navigationBar-height);
+  line-height: var(--caix-navigationBar-height);
 }
 </style>
