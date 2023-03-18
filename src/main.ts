@@ -18,4 +18,4 @@ const app = createApp(App);
 /* 加载插件 */
 loadPlugins(app);
 
-app.use(store).use(router).mount("#app");
+app.use(router).use(store).mount("#app");

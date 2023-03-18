@@ -1,10 +1,14 @@
 <script lang="ts" setup>
+/* 引入 useTagsViewStore */
 import { type ITagView, useTagsViewStore } from "@/store/modules/tags";
 import { useRoute, useRouter } from "vue-router";
-import { watch } from "vue";
+import { watch, ref } from "vue";
 
 const route = useRoute();
 const routes = useRouter();
+const closable = ref<boolean>(true);
+
+/* 赋值 useTagsViewStore*/
 const tagsStore = useTagsViewStore();
 
 watch(
@@ -16,18 +20,35 @@ watch(
     deep: true,
   }
 );
+watch(
+  tagsStore.tagList,
+  (n) => {
+    if (!tagsStore.tagList.length) {
+      routes.push("/");
+    }
+    if (n.length === 1 && n[0].path === "/home") {
+      closable.value = false;
+    } else {
+      closable.value = true;
+    }
+  },
+  {
+    immediate: true,
+  }
+);
 
+/* 使用 useTagsViewStore */
 const addTags = () => {
   if (route?.meta.title) {
     tagsStore.addTag(route);
   }
 };
 
+/* 使用 useTagsViewStore */
 const delTag = (view: ITagView) => {
   tagsStore.delTag(view);
-  console.log("tagsStore.tagList", tagsStore.tagList.length);
-  if (!tagsStore.tagList.length) {
-    routes.push("/");
+  if (view.path === route.path && tagsStore.tagList.length) {
+    routes.push(`${tagsStore.tagList[tagsStore.tagList.length - 1].path}`);
   }
 };
 
@@ -41,7 +62,7 @@ const goRoute = (view: ITagView) => {
     <el-scrollbar>
       <div class="scrollbar-flex-content">
         <el-tag
-          closable
+          :closable="closable"
           v-for="item in tagsStore.tagList"
           :key="item.path"
           class="scrollbar-demo-item"
