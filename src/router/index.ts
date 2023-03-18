@@ -15,6 +15,7 @@ export const routes: RouteRecordRaw[] = [
     meta: {
       title: "首页",
       isShowSideBar: true,
+      icon: "vite",
     },
     children: [
       {
@@ -24,6 +25,7 @@ export const routes: RouteRecordRaw[] = [
         meta: {
           isShowSideBar: true,
           title: "首页",
+          icon: "vite",
         },
       },
     ],
@@ -36,6 +38,7 @@ export const routes: RouteRecordRaw[] = [
     meta: {
       isShowSideBar: true,
       title: "表格组件",
+      icon: "vite",
     },
     children: [
       {
@@ -45,6 +48,7 @@ export const routes: RouteRecordRaw[] = [
         meta: {
           isShowSideBar: true,
           title: "第一个表格",
+          icon: "vite",
         },
       },
       {
@@ -54,6 +58,7 @@ export const routes: RouteRecordRaw[] = [
         meta: {
           isShowSideBar: true,
           title: "第二个表格",
+          icon: "vite",
         },
       },
     ],

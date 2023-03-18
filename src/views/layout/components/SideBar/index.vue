@@ -9,7 +9,7 @@ console.log("router", routes);
 <template>
   <div class="app-sideBar">
     <header class="sideBarHeader">
-      <img src="@/assets/vite.svg" class="logo" alt="Vite logo" />
+      <svg-icon name="vite" font-size="32"></svg-icon>
       <span>caix - 1987</span>
     </header>
     <el-menu
@@ -18,6 +18,7 @@ console.log("router", routes);
       text-color="#ffffff"
       popper-effect="light"
       :default-active="route.path"
+      :collapse="false"
     >
       <template v-for="item in routes" :key="item.path">
         <el-sub-menu
@@ -25,19 +26,21 @@ console.log("router", routes);
           v-if="item?.children && item?.children.length > 1"
         >
           <template #title v-if="item?.meta?.isShowSideBar">
+            <svg-icon :name="item?.meta?.icon" class="mr"></svg-icon>
             <span>{{ item?.meta?.title }}</span>
           </template>
           <el-menu-item
             :index="ele.path"
             v-for="ele in item.children"
             :key="ele.path"
-            >{{ ele?.meta?.title }}</el-menu-item
+          >
+            <svg-icon :name="item?.meta?.icon" class="mr"></svg-icon>
+            {{ ele?.meta?.title }}</el-menu-item
           >
         </el-sub-menu>
-        <el-menu-item
-          v-else-if="item?.meta?.isShowSideBar"
-          :index="item.path"
-          >{{ item?.meta?.title }}</el-menu-item
+        <el-menu-item v-else-if="item?.meta?.isShowSideBar" :index="item.path">
+          <svg-icon :name="item?.meta?.icon" class="mr"></svg-icon>
+          {{ item?.meta?.title }}</el-menu-item
         >
       </template>
     </el-menu>
