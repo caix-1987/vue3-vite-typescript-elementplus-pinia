@@ -10,12 +10,8 @@ const layout = () => import("@/views/layout/index.vue");
 export const routes: RouteRecordRaw[] = [
   {
     path: "/",
-    redirect: "/home",
-    meta: { isShowSideBar: false },
-  },
-  {
-    path: "/home",
     component: layout,
+    redirect: "/home",
     meta: {
       title: "首页",
       isShowSideBar: true,
@@ -35,6 +31,7 @@ export const routes: RouteRecordRaw[] = [
   {
     path: "/table",
     name: "Table",
+    redirect: "/table-one",
     component: layout,
     meta: {
       isShowSideBar: true,

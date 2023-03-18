@@ -23,9 +23,6 @@ watch(
 watch(
   tagsStore.tagList,
   (n) => {
-    if (!tagsStore.tagList.length) {
-      routes.push("/");
-    }
     if (n.length === 1 && n[0].path === "/home") {
       closable.value = false;
     } else {
@@ -47,6 +44,10 @@ const addTags = () => {
 /* 使用 useTagsViewStore */
 const delTag = (view: ITagView) => {
   tagsStore.delTag(view);
+  if (!tagsStore.tagList.length) {
+    routes.push("/");
+    return;
+  }
   if (view.path === route.path && tagsStore.tagList.length) {
     routes.push(`${tagsStore.tagList[tagsStore.tagList.length - 1].path}`);
   }
@@ -68,7 +69,7 @@ const goRoute = (view: ITagView) => {
           class="scrollbar-demo-item"
           @close="delTag(item)"
           @click="goRoute(item)"
-          :type="item.path === route.path ? 'success' : 'info'"
+          :type="item.path === route.path ? '' : 'info'"
         >
           {{ item?.meta?.title }}
         </el-tag>
