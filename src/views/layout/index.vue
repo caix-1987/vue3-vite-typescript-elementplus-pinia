@@ -6,6 +6,29 @@ import {
   Container,
   SetingButton,
 } from "./components";
+import { watch } from "vue";
+import { useRoute } from "vue-router";
+import { useTagsViewStore } from "@/store/modules/tags";
+
+const route = useRoute();
+const tagsStore = useTagsViewStore();
+
+const addTag = () => {
+  if (route?.meta?.title) {
+    tagsStore.addTag(route);
+  }
+};
+
+watch(
+  route,
+  () => {
+    addTag();
+  },
+  {
+    deep: true,
+    immediate: true,
+  }
+);
 </script>
 
 <template>
@@ -38,12 +61,20 @@ import {
   z-index: 1001;
   overflow: hidden;
   background: var(--caix-sidebar-bg-color);
-  // border-right: solid var(--caix-sidebar-bg-color);
 }
 .main-container {
   min-height: 100%;
   transition: width 0.28s;
   position: relative;
   margin-left: var(--caix-sidebar-width);
+}
+.fixed-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  width: calc(100% - var(--caix-sidebar-width));
+  transition: width 0.28s;
+  z-index: 9;
 }
 </style>

@@ -1,9 +1,15 @@
 /** 全局 CSS 变量，这种变量不仅可以在 CSS 和 SCSS 中使用，还可以导入到 JS 中使用 */
 
 :root {
-  --caix-sidebar-width: 220px;
+  --caix-sidebar-width: 240px;
+  --caix-navigationBar-height: 56px;
+  --caix-taglist-height: 36px;
+  --caix-container-height: 100vh;
+
   --caix-body-bg-color: #f2f3f5;
   --caix-sidebar-bg-color: #001428;
+  --caix-navigationBar-bg-color: #151515;
   --caix-taglist-bg-color: #ffffff;
+
   --caix-font-color-white: #ffffff;
 }
