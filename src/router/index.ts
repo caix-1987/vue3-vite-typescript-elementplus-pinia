@@ -10,15 +10,12 @@ const layout = () => import("@/views/layout/index.vue");
 export const routes: RouteRecordRaw[] = [
   {
     path: "/",
-    redirect: "/home",
-    meta: { isShowSideBar: false },
-  },
-  {
-    path: "/home",
     component: layout,
+    redirect: "/home",
     meta: {
       title: "首页",
       isShowSideBar: true,
+      icon: "vite",
     },
     children: [
       {
@@ -28,6 +25,7 @@ export const routes: RouteRecordRaw[] = [
         meta: {
           isShowSideBar: true,
           title: "首页",
+          icon: "vite",
         },
       },
     ],
@@ -35,10 +33,12 @@ export const routes: RouteRecordRaw[] = [
   {
     path: "/table",
     name: "Table",
+    redirect: "/table-one",
     component: layout,
     meta: {
       isShowSideBar: true,
       title: "表格组件",
+      icon: "vite",
     },
     children: [
       {
@@ -48,6 +48,7 @@ export const routes: RouteRecordRaw[] = [
         meta: {
           isShowSideBar: true,
           title: "第一个表格",
+          icon: "vite",
         },
       },
       {
@@ -57,6 +58,7 @@ export const routes: RouteRecordRaw[] = [
         meta: {
           isShowSideBar: true,
           title: "第二个表格",
+          icon: "vite",
         },
       },
     ],

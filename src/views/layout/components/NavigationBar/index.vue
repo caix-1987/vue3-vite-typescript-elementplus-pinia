@@ -1,15 +1,19 @@
 <script lang="ts" setup>
-import { FullScreen, Notify, UserInfo, Theme } from "@/components";
+import {
+  FullScreen,
+  Notify,
+  UserInfo,
+  Theme,
+  BreadCrumb,
+  Fold,
+} from "@/components";
 </script>
 
 <template>
   <div class="app-navigationBar">
     <div class="left">
-      <el-icon :size="24" class="icon">
-        <Fold v-if="true" />
-        <Expand v-else />
-      </el-icon>
-      <div class="tag-name">tag-name</div>
+      <Fold />
+      <BreadCrumb />
     </div>
     <div class="right">
       <FullScreen />
@@ -33,12 +37,7 @@ import { FullScreen, Notify, UserInfo, Theme } from "@/components";
   .left {
     display: flex;
     align-items: center;
-    .icon {
-      cursor: pointer;
-    }
-    .tag-name {
-      padding-left: 30px;
-    }
+    justify-content: center;
   }
   .right {
     display: flex;
