@@ -12,6 +12,8 @@ import { loadSvg } from "@/components/SvgIcon/index"; // 加载 svg 相关
 
 // css
 import "element-plus/dist/index.css";
+/* element-plus 暗黑主题 */
+import "element-plus/theme-chalk/dark/css-vars.css";
 import "@/styles/index.scss";
 
 const app = createApp(App);

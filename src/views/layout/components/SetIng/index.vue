@@ -6,7 +6,10 @@ const settingStore = useSettingStore();
 
 <template>
   <div class="app-setting">
-    <h3>系统布局配置</h3>
+    <div class="title">
+      <svg-icon name="vite" font-size="32"></svg-icon>
+      <span>系统布局配置</span>
+    </div>
     <div class="drawer-item">
       <span>显示标签栏</span>
       <el-switch
@@ -40,8 +43,15 @@ const settingStore = useSettingStore();
 <style lang="scss" scoped>
 .app-setting {
   color: teal;
-  h3 {
+  padding: 20px;
+  .title {
     padding-bottom: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    span {
+      padding-left: 20px;
+    }
   }
   .drawer-item {
     color: #222222;

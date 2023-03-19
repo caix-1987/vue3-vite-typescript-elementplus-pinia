@@ -1,7 +1,13 @@
 <script lang="ts" setup>
 import { h } from "vue";
+import { useTheme } from "@/hooks/setTheme";
 import { ElNotification } from "element-plus";
 import zhCn from "element-plus/lib/locale/lang/zh-cn";
+
+const { initTheme } = useTheme();
+
+/* 初始化主题 */
+initTheme();
 
 /*
  * Element Plus 组件 默认 使用英语

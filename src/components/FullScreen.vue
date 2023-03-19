@@ -48,7 +48,8 @@ onUnmounted(() => {
   <div class="app-fullScreen" @click="click">
     <el-tooltip effect="dark" :content="tips" placement="bottom">
       <el-icon class="icon">
-        <full-screen />
+        <full-screen v-if="!isFullscreen" />
+        <Rank v-else />
       </el-icon>
     </el-tooltip>
   </div>
