@@ -5,13 +5,16 @@ import {
   TagList,
   Container,
   SetingButton,
+  Seting,
 } from "./components";
-import { watch } from "vue";
+import { watch, computed } from "vue";
 import { useRoute } from "vue-router";
 import { useTagsViewStore } from "@/store/modules/tags";
+import { useSettingStore } from "@/store/modules/settings";
 
 const route = useRoute();
 const tagsStore = useTagsViewStore();
+const settingStore = useSettingStore();
 
 const addTag = () => {
   if (route?.meta?.title) {
@@ -29,6 +32,10 @@ watch(
     immediate: true,
   }
 );
+
+const showTagsView = computed(() => {
+  return settingStore.showTagsView;
+});
 </script>
 
 <template>
@@ -37,10 +44,12 @@ watch(
     <div class="main-container">
       <div class="fixed-header">
         <NavigationBar />
-        <TagList />
+        <TagList v-if="showTagsView" />
       </div>
       <Container />
-      <SetingButton />
+      <SetingButton>
+        <Seting />
+      </SetingButton>
     </div>
   </div>
 </template>

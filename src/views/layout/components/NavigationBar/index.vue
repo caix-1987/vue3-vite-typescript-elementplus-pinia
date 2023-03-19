@@ -7,6 +7,18 @@ import {
   BreadCrumb,
   Fold,
 } from "@/components";
+import { computed } from "vue";
+import { useSettingStore } from "@/store/modules/settings";
+
+const settingStore = useSettingStore();
+
+const showNotify = computed(() => {
+  return settingStore.showNotify;
+});
+
+const showFullScreen = computed(() => {
+  return settingStore.showScreenfull;
+});
 </script>
 
 <template>
@@ -16,9 +28,9 @@ import {
       <BreadCrumb />
     </div>
     <div class="right">
-      <FullScreen />
+      <FullScreen v-if="showFullScreen" />
       <Theme />
-      <Notify />
+      <Notify v-if="showNotify" />
       <UserInfo />
     </div>
   </div>
