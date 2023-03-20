@@ -5,6 +5,7 @@ import path from "path";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 /* 将 Svg 静态图转为 Vue 组件 */
 import svgLoader from "vite-svg-loader";
+import { viteMockServe } from "vite-plugin-mock";
 
 const resolve = (dir: string) => path.resolve(__dirname, dir); // 配置别名 @
 
@@ -33,6 +34,12 @@ export default ({ mode }) => {
       createSvgIconsPlugin({
         iconDirs: [path.resolve(process.cwd(), "src/assets/svg")], // 图标地址
         symbolId: "icon-[dir]-[name]",
+      }),
+      viteMockServe({
+        /* mock 的文件路径 */
+        mockPath: "src/mock",
+        /* 开发环境 */
+        localEnabled: true,
       }),
     ],
   });

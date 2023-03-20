@@ -40,7 +40,6 @@ const v3SidebarMenuActiveTextColor = getCssVariableValue(
         :unique-opened="true"
         :collapse="isOpen"
         :collapse-transition="false"
-        mode="vertical"
       >
         <template v-for="item in routes" :key="item.path">
           <el-sub-menu
@@ -48,7 +47,6 @@ const v3SidebarMenuActiveTextColor = getCssVariableValue(
             v-if="item?.children && item?.children.length > 1"
           >
             <template #title v-if="item?.meta?.isShowSideBar">
-              <!--  <svg-icon :name="item?.meta?.icon" class="mr"></svg-icon> -->
               <el-icon><Calendar /></el-icon>
               <span>{{ item?.meta?.title }}</span>
             </template>
@@ -57,7 +55,6 @@ const v3SidebarMenuActiveTextColor = getCssVariableValue(
               v-for="ele in item.children"
               :key="ele.path"
             >
-              <!-- <svg-icon :name="item?.meta?.icon" class="mr"></svg-icon> -->
               {{ ele?.meta?.title }}</el-menu-item
             >
           </el-sub-menu>
@@ -65,7 +62,6 @@ const v3SidebarMenuActiveTextColor = getCssVariableValue(
             v-else-if="item?.meta?.isShowSideBar"
             :index="item.path"
           >
-            <!--     -->
             <svg-icon :name="item?.meta?.icon" class="mr"></svg-icon>
             <template #title>
               {{ item?.meta?.title }}
