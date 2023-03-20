@@ -5,8 +5,11 @@ import { list } from "./data";
 <template>
   <div class="app-home-list">
     <div class="technology-item" v-for="item in list" :key="item.title">
-      <Svg-icon :name="item.technologyIcon" font-size="80px"></Svg-icon>
-      <div>{{ item.description }}</div>
+      <div class="item-pm">
+        <Svg-icon :name="item.technologyIcon" font-size="60px"></Svg-icon>
+        <div class="title">{{ item.title }}</div>
+        <!-- <div class="des">{{ item.description }}</div> -->
+      </div>
     </div>
   </div>
 </template>
@@ -14,14 +17,32 @@ import { list } from "./data";
 <style lang="scss" scoped>
 .app-home-list {
   display: flex;
-  width: 100%;
   flex-wrap: wrap;
+  justify-content: flex-start;
   .technology-item {
-    padding: 10px;
-    display: column;
-    text-align: center;
-    width: 100%;
-    flex: 1 1 33.33%;
+    width: 33.33%;
+    .item-pm {
+      margin: 10px;
+      padding: 10px;
+      border-radius: 6px;
+      background: #ffffff;
+      text-align: center;
+      cursor: pointer;
+      .title {
+        text-align: center;
+        font-size: 32px;
+        font-weight: bold;
+        color: #409eff;
+        padding: 20px 0;
+      }
+      .des {
+        text-align: left;
+        padding: 10px;
+      }
+      &:hover {
+        background: #ecf5ff;
+      }
+    }
   }
 }
 </style>

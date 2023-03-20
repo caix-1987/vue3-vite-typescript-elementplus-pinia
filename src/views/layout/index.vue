@@ -11,10 +11,12 @@ import { watch, computed } from "vue";
 import { useRoute } from "vue-router";
 import { useTagsViewStore } from "@/store/modules/tags";
 import { useSettingStore } from "@/store/modules/settings";
+import { useSidebarStore } from "@/store/modules/sidebar";
 
 const route = useRoute();
 const tagsStore = useTagsViewStore();
 const settingStore = useSettingStore();
+const setSidebar = useSidebarStore();
 
 const addTag = () => {
   if (route?.meta?.title) {
@@ -36,10 +38,17 @@ watch(
 const showTagsView = computed(() => {
   return settingStore.showTagsView;
 });
+
+const isHideSidebar = computed(() => {
+  return {
+    hideSidebar: setSidebar.sidebar.opened,
+    withoutAnimation: setSidebar.sidebar.withoutAnimation,
+  };
+});
 </script>
 
 <template>
-  <div class="app-layout">
+  <div class="app-layout" :class="isHideSidebar">
     <SideBar class="sidebar-container" />
     <div class="main-container">
       <div class="fixed-header">
@@ -55,7 +64,9 @@ const showTagsView = computed(() => {
 </template>
 
 <style lang="scss" scoped>
+@import "@/styles/mixins.scss";
 .app-layout {
+  @include clearfix;
   position: relative;
   width: 100%;
 }
@@ -69,11 +80,10 @@ const showTagsView = computed(() => {
   left: 0;
   z-index: 1001;
   overflow: hidden;
-  background: var(--caix-sidebar-bg-color);
 }
 .main-container {
   min-height: 100%;
-  transition: width 0.28s;
+  transition: margin-left 0.28s;
   position: relative;
   margin-left: var(--caix-sidebar-width);
 }
@@ -85,5 +95,25 @@ const showTagsView = computed(() => {
   width: calc(100% - var(--caix-sidebar-width));
   transition: width 0.28s;
   z-index: 9;
+}
+
+.hideSidebar {
+  .main-container {
+    margin-left: var(--caix-sidebar-hidden-width);
+  }
+  .sidebar-container {
+    width: var(--caix-sidebar-hidden-width) !important;
+  }
+
+  .fixed-header {
+    width: calc(100% - var(--caix-sidebar-hidden-width));
+  }
+}
+
+.withoutAnimation {
+  .main-container,
+  .sidebar-container {
+    transition: none;
+  }
 }
 </style>

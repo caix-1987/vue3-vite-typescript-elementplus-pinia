@@ -1,12 +1,24 @@
 /** 全局 CSS 变量，这种变量不仅可以在 CSS 和 SCSS 中使用，还可以导入到 JS 中使用 */
 
 :root {
+  /* siderbar */
   --caix-sidebar-width: 240px;
+  --caix-sidebar-hidden-width: 58px;
+  /* siderbar-menu */
+  --caix-sidebar-menu-item-height: 60px;
+  --caix-sidebar-menu-tip-line-bg-color: var(--el-color-primary);
+  --caix-sidebar-menu-bg-color: #001428;
+  --caix-sidebar-menu-hover-bg-color: #ffffff10;
+  --caix-sidebar-menu-text-color: #c0c4cc;
+  --caix-sidebar-menu-active-text-color: #ffffff;
+
   --caix-navigationBar-height: 56px;
   --caix-taglist-height: 36px;
   --caix-container-height: 100vh;
 
+  /* 全局背景颜色 */
   --caix-body-bg-color: #f2f3f5;
+
   --caix-sidebar-bg-color: #001428;
   --caix-navigationBar-bg-color: #151515;
   --caix-taglist-bg-color: #ffffff;

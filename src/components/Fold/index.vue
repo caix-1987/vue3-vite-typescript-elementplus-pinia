@@ -1,9 +1,21 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { computed } from "vue";
+import { useSidebarStore } from "@/store/modules/sidebar";
+
+const setSidebar = useSidebarStore();
+const isOpen = computed(() => {
+  return !setSidebar.sidebar.opened;
+});
+
+const click = () => {
+  setSidebar.toggleSidebar();
+};
+</script>
 
 <template>
-  <div class="app-fold">
+  <div class="app-fold" @click="click">
     <el-icon :size="24" class="icon">
-      <Fold v-if="true" />
+      <Fold v-if="isOpen" />
       <Expand v-else />
     </el-icon>
   </div>

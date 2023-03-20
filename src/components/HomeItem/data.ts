@@ -7,22 +7,12 @@ interface IHomeListItem {
 export const list: IHomeListItem[] = [
   {
     technologyIcon: "vite",
-    title: "Vite",
+    title: "vite",
     description: "vite 的相关描述信息",
   },
   {
     technologyIcon: "vue",
-    title: "Vue",
+    title: "vue",
     description: "Vue 的相关描述信息",
-  },
-  {
-    technologyIcon: "vue",
-    title: "Vue2",
-    description: "Vue2 的相关描述信息",
-  },
-  {
-    technologyIcon: "vue",
-    title: "Vue2",
-    description: "Vue2 的相关描述信息",
   },
 ];
