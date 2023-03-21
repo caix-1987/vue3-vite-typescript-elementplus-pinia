@@ -1,0 +1,9 @@
+/* Element-Plus 样式调整 */
+
+/* 表格 */
+.el-table {
+  // 表头
+  th.el-table__cell {
+    background-color: var(--el-fill-color-light) !important;
+  }
+}

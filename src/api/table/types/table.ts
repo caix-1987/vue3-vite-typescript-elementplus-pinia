@@ -1,4 +1,4 @@
-interface IApiResponseData<T> {
+export interface IApiResponseData<T> {
   code: number;
   data: T;
   message: string;

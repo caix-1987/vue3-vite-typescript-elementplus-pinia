@@ -42,5 +42,30 @@ export default ({ mode }) => {
         localEnabled: true,
       }),
     ],
+
+    server: {
+      /* 是否开启 https */
+      https: false,
+      /* 设置 host: true 才可以使用 Network 的形式，以 IP 访问项目 */
+      host: true,
+      /* 端口号 */
+      port: 5173,
+      /* 是否自动打开浏览器 */
+      open: false,
+      /* 跨域设置允许 */
+      cors: true,
+      /* 端口被占用 是否直接退出 */
+      strictPort: false,
+      /* 代理接口 */
+      //proxy: {
+      // "/api/v1": {
+      // target:
+      //  "",
+      // ws: true,
+      /* 是否允许跨域 */
+      //  changeOrigin: true,
+      //   rewrite: (path) => path.replace("/api/v1", ""),
+      // },
+    },
   });
 };

@@ -1,27 +1,47 @@
 import { MockMethod } from "vite-plugin-mock";
+import Mock from "mockjs";
 
 const mock: Array<MockMethod> = [
   {
     url: "/api/v1/table",
     method: "get",
+    timeout: 500,
     response: () => {
       return {
         code: 0,
         message: "ok",
-        "data|20": [
+        "list|10": [
           {
-            "id|+1": "0",
+            id: "@id",
             username: "@cname",
-            createTime: "@date(yyyy-MM-DD)",
+            createTime: "@date(yyyy-MM-dd)",
             email: "@email()",
-            "phone|1": ["1398779792", "13987737892", "15008885522"],
+            phone: /13\d{9}/,
             "roles|1": ["admin", "guest"],
-            status: Boolean,
+            "status|1": ["男", "女"],
           },
         ],
+        total: 100,
       };
     },
   },
 ];
+
+export const mockTableItem = async (username: string, phone: string) => {
+  const result = await Mock.mock({
+    data: [
+      {
+        id: "@id",
+        username: username,
+        createTime: "@date(yyyy-MM-dd)",
+        email: "@email()",
+        phone: phone,
+        roles: "admin",
+        status: "男",
+      },
+    ],
+  });
+  return result;
+};
 
 export default mock;
