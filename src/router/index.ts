@@ -47,7 +47,7 @@ export const routes: RouteRecordRaw[] = [
         component: () => import("@/views/table-page/table-one-page.vue"),
         meta: {
           isShowSideBar: true,
-          title: "第一个表格",
+          title: "基础表格",
           icon: "vite",
         },
       },
@@ -57,7 +57,7 @@ export const routes: RouteRecordRaw[] = [
         component: () => import("@/views/table-page/table-two-page.vue"),
         meta: {
           isShowSideBar: true,
-          title: "第二个表格",
+          title: "甘特图",
           icon: "vite",
         },
       },

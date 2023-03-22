@@ -1,7 +1,15 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { HomeItem } from "@/components";
+import Author from "@/components/HomeItem/Author.vue";
+</script>
 
 <template>
-  <div class="app-home">首页</div>
+  <div class="app-home">
+    <div class="list">
+      <Author />
+      <HomeItem />
+    </div>
+  </div>
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped></style>

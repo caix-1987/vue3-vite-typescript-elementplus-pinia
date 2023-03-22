@@ -1,9 +1,9 @@
 /* 全局 css 变量 */
 @import "./variables.css";
 /* Transition */
-//@import "./transition.scss";
+@import "./transition.scss";
 /* Element Plus */
-//@import "./element-plus.scss";
+@import "./element-plus.scss";
 /* 注册主题 */
 @import "./theme//register.scss";
 

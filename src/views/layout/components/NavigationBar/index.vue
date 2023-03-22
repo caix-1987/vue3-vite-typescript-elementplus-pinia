@@ -9,6 +9,7 @@ import {
 } from "@/components";
 import { computed } from "vue";
 import { useSettingStore } from "@/store/modules/settings";
+import { useSidebarStore } from "@/store/modules/sidebar";
 
 const settingStore = useSettingStore();
 

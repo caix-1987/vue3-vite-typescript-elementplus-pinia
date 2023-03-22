@@ -8,13 +8,16 @@
 
 <style lang="scss" scoped>
 .app-container {
-  min-height: var(--caix-container-height);
+  height: 100vh;
+  min-height: calc(
+    100vh - var(--caix-navigationBar-height) - var(--caix-taglist-height)
+  );
   padding-top: calc(
     var(--caix-navigationBar-height) + var(--caix-taglist-height)
   );
   width: 100%;
   position: relative;
-  overflow: hidden;
+  overflow: auto;
   background: var(--caix-body-bg-color);
 }
 </style>
