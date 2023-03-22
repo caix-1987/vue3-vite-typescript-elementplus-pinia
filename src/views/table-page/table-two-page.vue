@@ -1,7 +1,11 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { GanttView } from "@/components";
+</script>
 
 <template>
-  <div class="app-table-two">table-two</div>
+  <div class="app-table-two">
+    <GanttView />
+  </div>
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped></style>

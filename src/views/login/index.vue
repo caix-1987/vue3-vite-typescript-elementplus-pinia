@@ -68,6 +68,7 @@ const submit = (formEl: FormInstance | undefined) => {
       </el-form>
       <el-button class="button" @click="submit(loginFormRef)">登陆</el-button>
     </div>
+    <p class="footer">by caix-1987 @2023</p>
   </div>
 </template>
 
@@ -87,7 +88,7 @@ const submit = (formEl: FormInstance | undefined) => {
   overflow: hidden;
   .login-box {
     position: absolute;
-    top: 0;
+    top: 60px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -112,12 +113,13 @@ const submit = (formEl: FormInstance | undefined) => {
     font-size: 18px;
     margin-left: 20px;
     background: linear-gradient(
-      -90deg,
+      90deg,
       rgb(88, 141, 216),
-      #f7cf23,
-      rgb(182, 0, 255)
+      rgb(182, 0, 255),
+      #f7cf23
     );
     border: none;
+    letter-spacing: 6px;
   }
 }
 .header {
@@ -156,6 +158,16 @@ const submit = (formEl: FormInstance | undefined) => {
     padding-right: 10px;
   }
 }
+.footer {
+  color: #ffffff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  display: none;
+}
 :deep(.el-input__wrapper) {
   border-radius: 4px !important;
 }
@@ -174,7 +186,7 @@ const submit = (formEl: FormInstance | undefined) => {
   padding-left: 10px;
 }
 :deep(.el-form-item__content) {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 :deep(.el-form-item__error) {
   padding-top: 10px;

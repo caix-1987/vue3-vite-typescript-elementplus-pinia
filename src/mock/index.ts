@@ -44,4 +44,28 @@ export const mockTableItem = async (username: string, phone: string) => {
   return result;
 };
 
+export const mockGanttList = async () => {
+  const result = await Mock.mock({
+    "data|4": [
+      {
+        id: "@id",
+        name: "项目名称",
+        planStartDate: /2023-0[1]-[1-2][0-9]/,
+        planEndDate: /2023-0[2]-[1-2][0-8]/,
+        "statue|1": ["1", "2", "3"],
+        "children|2": [
+          {
+            id: "@id",
+            name: "子项目名称",
+            planStartDate: /2023-0[1]-[1-2][0-9]/,
+            planEndDate: /2023-0[2]-[1-2][0-8]/,
+            "statue|1": ["1", "2", "3"],
+          },
+        ],
+      },
+    ],
+  });
+  return result;
+};
+
 export default mock;
