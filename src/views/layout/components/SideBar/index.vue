@@ -27,7 +27,7 @@ const v3SidebarMenuActiveTextColor = getCssVariableValue(
     <header class="sideBarHeader">
       <svg-icon name="vite" font-size="32"></svg-icon>
       <transition name="fade-transform" mode="out-in">
-        <span v-if="!isOpen">caix</span>
+        <span v-if="!isOpen">中后台管理系统</span>
       </transition>
     </header>
     <el-scrollbar wrap-class="scrollbar-wrapper">
@@ -82,7 +82,8 @@ const v3SidebarMenuActiveTextColor = getCssVariableValue(
   height: var(--caix-navigationBar-height);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-left: 20px;
   background: var(--caix-navigationBar-bg-color);
   width: 100%;
   span {

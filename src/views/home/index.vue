@@ -1,19 +1,15 @@
 <script lang="ts" setup>
 import { HomeItem } from "@/components";
+import Author from "@/components/HomeItem/Author.vue";
 </script>
 
 <template>
   <div class="app-home">
-    <div class="tips">说明</div>
     <div class="list">
+      <Author />
       <HomeItem />
     </div>
   </div>
 </template>
 
-<style lang="scss" scoped>
-.list,
-.tips {
-  margin-top: 20px;
-}
-</style>
+<style lang="scss" scoped></style>

@@ -1,4 +1,11 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+const loginOut = () => {
+  router.push("/login");
+};
+</script>
 <template>
   <el-dropdown size="large" placement="bottom-start">
     <div class="app-userInfo">
@@ -17,7 +24,7 @@
           <el-dropdown-item> 进入个人博客 </el-dropdown-item>
         </a>
         <el-dropdown-item divided>
-          <span>退出登录</span>
+          <span @click="loginOut">退出登录</span>
         </el-dropdown-item>
       </el-dropdown-menu>
     </template>

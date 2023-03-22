@@ -72,6 +72,7 @@ const isHideSidebar = computed(() => {
 }
 .sidebar-container {
   transition: width 0.28s;
+  transition-delay: 0.2s;
   width: var(--caix-sidebar-width) !important;
   position: fixed;
   height: 100%;
@@ -84,6 +85,7 @@ const isHideSidebar = computed(() => {
 .main-container {
   min-height: 100%;
   transition: margin-left 0.28s;
+  transition-delay: 0.2s;
   position: relative;
   margin-left: var(--caix-sidebar-width);
 }
@@ -94,6 +96,7 @@ const isHideSidebar = computed(() => {
   right: 0;
   width: calc(100% - var(--caix-sidebar-width));
   transition: width 0.28s;
+  transition-delay: 0.2s;
   z-index: 9;
 }
 
