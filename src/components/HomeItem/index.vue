@@ -10,8 +10,8 @@ import {
 <template>
   <div class="app-author">
     <el-card>
-      <h3>项目介绍</h3>
       <div class="content">
+        <h3>项目介绍</h3>
         <p class="des">{{ description }}</p>
         <div>
           <p class="des">
@@ -69,6 +69,7 @@ import {
 .app-author {
   width: 100%;
   .content {
+    padding: 0 30px;
     .des {
       font-size: 16px;
       line-height: 32px;
@@ -78,7 +79,11 @@ import {
       display: flex;
       justify-content: space-between;
       ul {
-        width: 40%;
+        width: 55%;
+      }
+
+      ul:first-child {
+        width: 30%;
       }
 
       li {
@@ -87,8 +92,7 @@ import {
       }
     }
     .study {
-      margin-right: 30px;
-      width: 20%;
+      width: 25%;
       align-self: flex-end;
       h4 {
         margin-bottom: 20px;
