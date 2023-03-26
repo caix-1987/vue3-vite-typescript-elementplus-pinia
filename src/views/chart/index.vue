@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import { GanttView } from "@/components";
+import Chart from "@/components/Chart/index.vue";
 </script>
 
 <template>
   <div class="app-content">
-    <GanttView />
+    <Chart />
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style scoped></style>

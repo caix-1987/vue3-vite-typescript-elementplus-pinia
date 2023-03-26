@@ -24,3 +24,15 @@ loadPlugins(app);
 loadSvg(app);
 
 app.use(router).use(store).mount("#app");
+
+router.beforeEach((to, form, next) => {
+  const token = localStorage.getItem("token");
+  if (to.path === "/login") {
+    next();
+  } else {
+    if (token !== "hasToken") {
+      next("/login");
+    }
+  }
+  next();
+});

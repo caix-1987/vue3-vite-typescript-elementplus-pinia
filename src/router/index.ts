@@ -15,7 +15,7 @@ export const routes: RouteRecordRaw[] = [
     meta: {
       title: "首页",
       isShowSideBar: true,
-      icon: "vite",
+      icon: "HomeFilled",
     },
     children: [
       {
@@ -25,7 +25,7 @@ export const routes: RouteRecordRaw[] = [
         meta: {
           isShowSideBar: true,
           title: "首页",
-          icon: "vite",
+          icon: "HomeFilled",
         },
       },
     ],
@@ -38,7 +38,7 @@ export const routes: RouteRecordRaw[] = [
     meta: {
       isShowSideBar: true,
       title: "表格组件",
-      icon: "vite",
+      icon: "Calendar",
     },
     children: [
       {
@@ -48,7 +48,7 @@ export const routes: RouteRecordRaw[] = [
         meta: {
           isShowSideBar: true,
           title: "基础表格",
-          icon: "vite",
+          icon: "Calendar",
         },
       },
       {
@@ -58,8 +58,53 @@ export const routes: RouteRecordRaw[] = [
         meta: {
           isShowSideBar: true,
           title: "甘特图",
-          icon: "vite",
+          icon: "Calendar",
         },
+      },
+    ],
+  },
+  {
+    path: "/map",
+    name: "map",
+    component: layout,
+    redirect: "/map/mapTencent",
+    meta: { isShowSideBar: true, title: "地图组件", icon: "MapLocation" },
+    children: [
+      {
+        path: "/map/mapTencent",
+        name: "mapTencent",
+        component: () => import("@/views/map/mapTencent.vue"),
+        meta: { isShowSideBar: true, title: "地图组件", icon: "MapLocation" },
+      },
+    ],
+  },
+  {
+    path: "/chart",
+    name: "chart",
+    component: layout,
+    redirect: "/chart/chart-one",
+    meta: { isShowSideBar: true, title: "chart 组件", icon: "PieChart" },
+    children: [
+      {
+        path: "/chart/chart-one",
+        name: "chart-one",
+        component: () => import("@/views/chart/index.vue"),
+        meta: { isShowSideBar: true, title: "chart 组件", icon: "PieChart" },
+      },
+    ],
+  },
+  {
+    path: "/baseComponent",
+    name: "baseComponent",
+    component: layout,
+    redirect: "/baseComponent/baseComponent-one",
+    meta: { isShowSideBar: true, title: "基础组件", icon: "Help" },
+    children: [
+      {
+        path: "/baseComponent/baseComponent-one",
+        name: "baseComponent-one",
+        component: () => import("@/views/baseComponent/index.vue"),
+        meta: { isShowSideBar: true, title: "基础组件", icon: "Help" },
       },
     ],
   },

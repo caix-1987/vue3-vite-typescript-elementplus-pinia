@@ -5,3 +5,5 @@ export { default as UserInfo } from "./UserInfo/index.vue";
 export { default as BreadCrumb } from "./BreadCrumb/index.vue";
 export { default as Fold } from "./Fold/index.vue";
 export { default as HomeItem } from "./HomeItem/index.vue";
+export { default as GanttView } from "./GanttView/index.vue";
+export { default as Map } from "./Map/index.vue";

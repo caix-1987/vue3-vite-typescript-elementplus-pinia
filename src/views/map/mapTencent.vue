@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import { GanttView } from "@/components";
+import { Map } from "@/components";
 </script>
 
 <template>
   <div class="app-content">
-    <GanttView />
+    <Map />
   </div>
 </template>
 

@@ -3,11 +3,13 @@ import { ref, reactive } from "vue";
 import { useRouter } from "vue-router";
 import { type FormInstance, FormRules, ElMessage } from "element-plus";
 import { type LoginFormRequest } from "@/api/login/type";
+import { useUserInfoStore } from "@/store/modules/userInfo";
 
+const userInfo = useUserInfoStore();
 const router = useRouter();
 const loginFormRef = ref<FormInstance>();
 const loginFormData: LoginFormRequest = reactive({
-  username: "admin",
+  username: "caix-1987",
   password: "123456",
 });
 const formRules: FormRules = {
@@ -19,6 +21,9 @@ const submit = (formEl: FormInstance | undefined) => {
   if (!formEl) return;
   formEl.validate((valid) => {
     if (valid) {
+      userInfo.setUserInfo.username = loginFormData.username;
+      userInfo.setUserInfo.token = "hasToken";
+      localStorage.setItem("token", userInfo.setUserInfo.token);
       ElMessage.success("登录成功");
       router.push("/");
     }
@@ -68,6 +73,7 @@ const submit = (formEl: FormInstance | undefined) => {
       </el-form>
       <el-button class="button" @click="submit(loginFormRef)">登陆</el-button>
     </div>
+    <p class="footer">by caix-1987 @2023</p>
   </div>
 </template>
 
@@ -87,7 +93,7 @@ const submit = (formEl: FormInstance | undefined) => {
   overflow: hidden;
   .login-box {
     position: absolute;
-    top: 0;
+    top: 60px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -111,13 +117,9 @@ const submit = (formEl: FormInstance | undefined) => {
     border-radius: 4px;
     font-size: 18px;
     margin-left: 20px;
-    background: linear-gradient(
-      -90deg,
-      rgb(88, 141, 216),
-      #f7cf23,
-      rgb(182, 0, 255)
-    );
+    background: linear-gradient(90deg, #f7cf23, #f7cf23, #f7cf23);
     border: none;
+    letter-spacing: 6px;
   }
 }
 .header {
@@ -156,6 +158,16 @@ const submit = (formEl: FormInstance | undefined) => {
     padding-right: 10px;
   }
 }
+.footer {
+  color: #ffffff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  display: none;
+}
 :deep(.el-input__wrapper) {
   border-radius: 4px !important;
 }
@@ -174,7 +186,7 @@ const submit = (formEl: FormInstance | undefined) => {
   padding-left: 10px;
 }
 :deep(.el-form-item__content) {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 :deep(.el-form-item__error) {
   padding-top: 10px;

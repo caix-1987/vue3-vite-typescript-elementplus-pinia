@@ -1,8 +1,15 @@
 <script lang="ts" setup>
 import { useRouter } from "vue-router";
+import { useTagsViewStore } from "@/store/modules/tags";
+import { useUserInfoStore } from "@/store/modules/userInfo";
 
+const tagsStore = useTagsViewStore();
+const userInfo = useUserInfoStore();
 const router = useRouter();
 const loginOut = () => {
+  tagsStore.tagList = [];
+  userInfo.setUserInfo.token = "";
+  localStorage.setItem("token", "");
   router.push("/login");
 };
 </script>
@@ -10,7 +17,7 @@ const loginOut = () => {
   <el-dropdown size="large" placement="bottom-start">
     <div class="app-userInfo">
       <img src="@/assets/caix.png" alt="" />
-      <span>caix</span>
+      <span>{{ userInfo.setUserInfo.username }}</span>
     </div>
     <template #dropdown>
       <el-dropdown-menu>

@@ -118,7 +118,6 @@ const getTableData = async () => {
     searchForm.phone = "";
     paginationData.total = result.total;
     tableData.value = result.list;
-    console.log("result", result);
   } catch (e) {
     console.log(e);
   } finally {
@@ -133,7 +132,7 @@ watch(
 </script>
 
 <template>
-  <div class="app-table-one">
+  <div class="app-content">
     <el-card>
       <div class="table-wrapper">
         <div class="opertion">
@@ -249,9 +248,6 @@ watch(
 </template>
 
 <style lang="scss" scoped>
-.app-table-one {
-  margin-top: 30px;
-}
 .table-wrapper {
   .opertion {
     display: flex;

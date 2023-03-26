@@ -1,14 +1,10 @@
 <script lang="ts" setup>
 import { HomeItem } from "@/components";
-import Author from "@/components/HomeItem/Author.vue";
 </script>
 
 <template>
-  <div class="app-home">
-    <div class="list">
-      <Author />
-      <HomeItem />
-    </div>
+  <div class="app-content">
+    <HomeItem />
   </div>
 </template>
 
