@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { reactive, ref, watch } from "vue";
 import { ElMessage, FormRules, type FormInstance } from "element-plus";
-import { mockTableItem } from "@/mock";
+import { mockTableItem, mockTableList } from "@/mock";
 import {
   createTableDataApi,
   deleteTableDataApi,
@@ -110,13 +110,10 @@ const searchTableData = async () => {
 const getTableData = async () => {
   loading.value = true;
   try {
-    const result: any = await getTableDataApi({
-      currentPage: paginationData.currentPage,
-      size: paginationData.pageSize,
-    });
+    const result: any = await mockTableList();
     searchForm.username = "";
     searchForm.phone = "";
-    paginationData.total = result.total;
+    paginationData.total = result.total || 100;
     tableData.value = result.list;
   } catch (e) {
     console.log(e);

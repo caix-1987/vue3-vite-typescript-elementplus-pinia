@@ -24,6 +24,7 @@ const submit = (formEl: FormInstance | undefined) => {
       userInfo.setUserInfo.username = loginFormData.username;
       userInfo.setUserInfo.token = "hasToken";
       localStorage.setItem("token", userInfo.setUserInfo.token);
+      localStorage.setItem("Caix_username", loginFormData.username);
       ElMessage.success("登录成功");
       router.push("/");
     }

@@ -5,11 +5,13 @@ import { useUserInfoStore } from "@/store/modules/userInfo";
 
 const tagsStore = useTagsViewStore();
 const userInfo = useUserInfoStore();
+const username = localStorage.getItem("Caix_username");
 const router = useRouter();
 const loginOut = () => {
   tagsStore.tagList = [];
   userInfo.setUserInfo.token = "";
   localStorage.setItem("token", "");
+  localStorage.setItem("Caix_username", "");
   router.push("/login");
 };
 </script>
@@ -17,7 +19,7 @@ const loginOut = () => {
   <el-dropdown size="large" placement="bottom-start">
     <div class="app-userInfo">
       <img src="@/assets/caix.png" alt="" />
-      <span>{{ userInfo.setUserInfo.username }}</span>
+      <span>{{ username }}</span>
     </div>
     <template #dropdown>
       <el-dropdown-menu>
