@@ -77,7 +77,6 @@ class GanttUtil {
         this.tableDataFormat(item.children, minMaxDate);
       }
     });
-    console.log("minMaxInDay", minMaxInDay);
     return minMaxInDay;
   }
 
@@ -85,7 +84,6 @@ class GanttUtil {
     startDate: string,
     endDate: string
   ): Promise<IGanttInitData[]> {
-    console.log("startDate_endDate", startDate, endDate);
     const start = this.dateFormatDay(startDate);
     const end = this.dateFormatDay(endDate);
 
@@ -95,8 +93,6 @@ class GanttUtil {
     const ganttEndInitData: IGanttInitData[] = [];
 
     let i, j;
-
-    console.log("star_end", start, end);
 
     for (i = start, j = 0; i <= end; i++, j++) {
       str_year_mounth_day_arr[j] = this.dayFormatDate(i);
@@ -118,8 +114,6 @@ class GanttUtil {
       };
       ganttEndInitData.push(ganttInitData);
     });
-
-    console.log("ganttEndInitData", ganttEndInitData);
 
     return ganttEndInitData;
   }

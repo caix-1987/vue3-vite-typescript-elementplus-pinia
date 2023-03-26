@@ -118,7 +118,6 @@ const getTableData = async () => {
     searchForm.phone = "";
     paginationData.total = result.total;
     tableData.value = result.list;
-    console.log("result", result);
   } catch (e) {
     console.log(e);
   } finally {

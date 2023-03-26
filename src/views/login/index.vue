@@ -3,11 +3,13 @@ import { ref, reactive } from "vue";
 import { useRouter } from "vue-router";
 import { type FormInstance, FormRules, ElMessage } from "element-plus";
 import { type LoginFormRequest } from "@/api/login/type";
+import { useUserInfoStore } from "@/store/modules/userInfo";
 
+const userInfo = useUserInfoStore();
 const router = useRouter();
 const loginFormRef = ref<FormInstance>();
 const loginFormData: LoginFormRequest = reactive({
-  username: "admin",
+  username: "caix-1987",
   password: "123456",
 });
 const formRules: FormRules = {
@@ -19,6 +21,9 @@ const submit = (formEl: FormInstance | undefined) => {
   if (!formEl) return;
   formEl.validate((valid) => {
     if (valid) {
+      userInfo.setUserInfo.username = loginFormData.username;
+      userInfo.setUserInfo.token = "hasToken";
+      localStorage.setItem("token", userInfo.setUserInfo.token);
       ElMessage.success("登录成功");
       router.push("/");
     }

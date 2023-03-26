@@ -44,7 +44,6 @@ watch(
 const resetMark = () => {
   lng.value = "";
   lat.value = "";
-  console.log("MymarkerLayer", MyPolylineLayer);
   if (MyMarkerLayer) {
     const ids = MyMarkerLayer.geometries.map((item: any) => {
       return item.id;
@@ -59,11 +58,9 @@ const resetMark = () => {
   }
 };
 const connectMark = () => {
-  console.log("MymarkerLayer", MyMarkerLayer);
   const paths = MyMarkerLayer.geometries.map((item: any) => {
     return item.position;
   });
-  console.log("MymarkerLayer", paths);
   if (MyPolylineLayer) {
     const geometries = {
       id: "pl_1", //折线唯一标识，删除时使用

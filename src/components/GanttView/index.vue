@@ -24,12 +24,6 @@ const getGanttList = async () => {
     tableData.value = result.data;
 
     min_max_data.value = await GanttUtil.getMinAndMaxDate(tableData.value);
-    console.log(
-      "min_max_data.value",
-      min_max_data.value,
-      min_max_data.value.minDate,
-      min_max_data.value.maxDate
-    );
 
     ganttEndInitData.value = await GanttUtil.initGanttData(
       min_max_data.value.minDate,
@@ -40,9 +34,6 @@ const getGanttList = async () => {
       tableData.value,
       min_max_data.value
     );
-
-    console.log("ganttEndInitData.value", ganttEndInitData.value);
-    console.log("endTableData", tableData.value);
   } catch (e) {
     console.log("e", e);
   } finally {
@@ -65,7 +56,7 @@ const selectGanttType = (val: string | number | boolean) => {
 };
 
 onMounted(() => {
-  console.log(getGanttList());
+  getGanttList();
 });
 </script>
 
