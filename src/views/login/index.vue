@@ -112,12 +112,7 @@ const submit = (formEl: FormInstance | undefined) => {
     border-radius: 4px;
     font-size: 18px;
     margin-left: 20px;
-    background: linear-gradient(
-      90deg,
-      rgb(88, 141, 216),
-      rgb(182, 0, 255),
-      #f7cf23
-    );
+    background: linear-gradient(90deg, #f7cf23, #f7cf23, #f7cf23);
     border: none;
     letter-spacing: 6px;
   }

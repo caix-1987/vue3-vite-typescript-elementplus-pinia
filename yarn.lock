@@ -893,6 +893,14 @@ domutils@^3.0.1:
     domelementtype "^2.3.0"
     domhandler "^5.0.1"
 
+echarts@^5.4.2:
+  version "5.4.2"
+  resolved "https://registry.npmmirror.com/echarts/-/echarts-5.4.2.tgz#9f38781c9c6ae323e896956178f6956952c77a48"
+  integrity sha512-2W3vw3oI2tWJdyAz+b8DuWS0nfXtSDqlDmqgin/lfzbkB01cuMEN66KWBlmur3YMp5nEDEEt5s23pllnAzB4EA==
+  dependencies:
+    tslib "2.3.0"
+    zrender "5.4.3"
+
 ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.npmmirror.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
@@ -2114,6 +2122,11 @@ traverse@^0.6.6:
   resolved "https://registry.npmmirror.com/traverse/-/traverse-0.6.7.tgz#46961cd2d57dd8706c36664acde06a248f1173fe"
   integrity sha512-/y956gpUo9ZNCb99YjxG7OaslxZWHfCHAUUfshwqOXmxUIvqLjVO581BT+gM59+QV9tFe6/CGG53tsA1Y7RSdg==
 
+tslib@2.3.0:
+  version "2.3.0"
+  resolved "https://registry.npmmirror.com/tslib/-/tslib-2.3.0.tgz#803b8cdab3e12ba581a4ca41c8839bbb0dacb09e"
+  integrity sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==
+
 typescript@^4.9.3:
   version "4.9.5"
   resolved "https://registry.npmmirror.com/typescript/-/typescript-4.9.5.tgz#095979f9bcc0d09da324d58d03ce8f8374cbe65a"
@@ -2259,3 +2272,10 @@ vue@^3.2.45:
     "@vue/runtime-dom" "3.2.47"
     "@vue/server-renderer" "3.2.47"
     "@vue/shared" "3.2.47"
+
+zrender@5.4.3:
+  version "5.4.3"
+  resolved "https://registry.npmmirror.com/zrender/-/zrender-5.4.3.tgz#41ffaf835f3a3210224abd9d6964b48ff01e79f5"
+  integrity sha512-DRUM4ZLnoaT0PBVvGBDO9oWIDBKFdAVieNWxWwK0niYzJCMwGchRk21/hsE+RKkIveH3XHCyvXcJDkgLVvfizQ==
+  dependencies:
+    tslib "2.3.0"

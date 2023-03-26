@@ -1,10 +1,11 @@
 <script lang="ts" setup>
 import { useRouter, useRoute, type RouteRecordRaw } from "vue-router";
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { useSidebarStore } from "@/store/modules/sidebar";
 import { getCssVariableValue } from "@/utils";
 
 const setSidebar = useSidebarStore();
+const opens = ref(["/table"]);
 const isOpen = computed(() => {
   return setSidebar.sidebar.opened;
 });
@@ -27,7 +28,7 @@ const v3SidebarMenuActiveTextColor = getCssVariableValue(
     <header class="sideBarHeader">
       <svg-icon name="vite" font-size="32"></svg-icon>
       <transition name="fade-transform" mode="out-in">
-        <span v-if="!isOpen">中后台管理系统</span>
+        <span v-if="!isOpen">caix_管理系统</span>
       </transition>
     </header>
     <el-scrollbar wrap-class="scrollbar-wrapper">
@@ -40,6 +41,7 @@ const v3SidebarMenuActiveTextColor = getCssVariableValue(
         :unique-opened="true"
         :collapse="isOpen"
         :collapse-transition="false"
+        :default-openeds="opens"
       >
         <template v-for="item in routes" :key="item.path">
           <el-sub-menu
@@ -47,7 +49,7 @@ const v3SidebarMenuActiveTextColor = getCssVariableValue(
             v-if="item?.children && item?.children.length > 1"
           >
             <template #title v-if="item?.meta?.isShowSideBar">
-              <el-icon><Calendar /></el-icon>
+              <el-icon> <component :is="item?.meta?.icon" /></el-icon>
               <span>{{ item?.meta?.title }}</span>
             </template>
             <el-menu-item
@@ -62,7 +64,9 @@ const v3SidebarMenuActiveTextColor = getCssVariableValue(
             v-else-if="item?.meta?.isShowSideBar"
             :index="item.path"
           >
-            <svg-icon :name="item?.meta?.icon" class="mr"></svg-icon>
+            <el-icon>
+              <component :is="item.meta.icon" />
+            </el-icon>
             <template #title>
               {{ item?.meta?.title }}
             </template>

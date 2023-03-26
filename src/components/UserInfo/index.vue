@@ -1,8 +1,11 @@
 <script lang="ts" setup>
 import { useRouter } from "vue-router";
+import { useTagsViewStore } from "@/store/modules/tags";
 
+const tagsStore = useTagsViewStore();
 const router = useRouter();
 const loginOut = () => {
+  tagsStore.tagList = [];
   router.push("/login");
 };
 </script>

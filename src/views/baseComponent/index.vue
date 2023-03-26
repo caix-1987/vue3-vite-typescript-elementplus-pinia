@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import Svg404 from "@/assets/svg/vite.svg";
+import BaseComponent from "@/components/BaseComponent/index.vue";
 </script>
 
 <template>
   <div class="app-content">
-    <Svg-404></Svg-404>
+    <BaseComponent />
   </div>
 </template>
 

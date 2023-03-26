@@ -1,7 +1,7 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div class="app-403">page 403</div>
+  <div class="app-content">page 403</div>
 </template>
 
 <style scoped></style>

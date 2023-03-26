@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { onMounted, ref } from "vue";
 import { type IGanttList } from "@/components/GanttView/data";
-import { mockGanttList } from "@/mock";
+import { getGanttDataApi } from "@/api/gantt";
 import GanttUtil, { type IGanttInitData } from "@/components/GanttView/Gantt";
 import GanttBar from "@/components/GanttView/GanttBar.vue";
 
@@ -13,12 +13,14 @@ const tableData = ref<IGanttList[]>([]);
 const min_max_data = ref();
 const ganttEndInitData = ref<IGanttInitData[]>([]);
 const ganttIntervalDay = ref<number>(0);
+const loading = ref<boolean>(false);
 const radio_1 = ref("1");
 const radio_2 = ref("2");
 const radio_3 = ref("3");
 const getGanttList = async () => {
   try {
-    const result = await mockGanttList();
+    loading.value = true;
+    const result: any = await getGanttDataApi();
     tableData.value = result.data;
 
     min_max_data.value = await GanttUtil.getMinAndMaxDate(tableData.value);
@@ -43,6 +45,8 @@ const getGanttList = async () => {
     console.log("endTableData", tableData.value);
   } catch (e) {
     console.log("e", e);
+  } finally {
+    loading.value = false;
   }
 };
 
@@ -82,6 +86,7 @@ onMounted(() => {
       :tree-props="{ children: 'children', hasChildren: 'hasChildren' }"
       default-expand-all
       style="width: 100%; margin-bottom: 20px"
+      v-loading="loading"
     >
       <el-table-column
         fixed
@@ -128,9 +133,6 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
-.app-ganttView {
-  margin-top: 30px;
-}
 .selectGantt {
   margin: 10px 0;
   display: flex;
