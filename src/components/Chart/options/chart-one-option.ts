@@ -20,8 +20,6 @@ export const optionOne = {
     },
   },
 
-  dataZoom: [{ type: "slider", xAxisIndex: 0, start: 14, end: 50 }],
-
   toolbox: {
     feature: {
       dataZoom: {
