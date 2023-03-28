@@ -26,6 +26,12 @@ import {
             </a>
           </p>
           <p class="des">
+            完整教程 :
+            <a target="_blank" href="https://www.cnblogs.com/caix-1987/">
+              <i>参看个人博客 https://www.cnblogs.com/caix-1987/</i>
+            </a>
+          </p>
+          <p class="des">
             联系方式 :
             <i>cai_xin@foxmail.com</i>
           </p>
