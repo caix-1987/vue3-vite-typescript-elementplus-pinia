@@ -18,7 +18,7 @@ export default ({ mode }) => {
 
   return defineConfig({
     /* 打包时根据实际情况修改 base */
-    base: VITE_APP_SERVER_URL,
+    base: "/",
     resolve: {
       alias: {
         /** @ 符号指向 src 目录 */
