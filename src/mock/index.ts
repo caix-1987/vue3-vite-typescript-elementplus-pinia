@@ -98,4 +98,21 @@ export const mockGanttList = async () => {
   return result;
 };
 
+export const mockTableList = async () => {
+  const result = await Mock.mock({
+    "list|10": [
+      {
+        id: "@id",
+        username: "@cname",
+        createTime: "@date(yyyy-MM-dd)",
+        email: "@email()",
+        phone: /13\d{9}/,
+        "roles|1": ["admin", "guest"],
+        "status|1": ["男", "女"],
+      },
+    ],
+  });
+  return result;
+};
+
 export default mock;

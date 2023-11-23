@@ -1,6 +1,6 @@
 import { reactive } from "vue";
 
-interface IDdfaulePaginationData {
+interface IDdefaulePaginationData {
   total: number;
   currentPage: number;
   pageSizes: number[];
@@ -16,7 +16,7 @@ interface IPaginationData {
   layout?: string;
 }
 
-const defaultPaginationData: IDdfaulePaginationData = {
+const defaultPaginationData: IDdefaulePaginationData = {
   total: 0,
   currentPage: 1,
   pageSizes: [10, 20, 50],

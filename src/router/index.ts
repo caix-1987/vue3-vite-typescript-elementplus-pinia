@@ -98,13 +98,13 @@ export const routes: RouteRecordRaw[] = [
     name: "baseComponent",
     component: layout,
     redirect: "/baseComponent/baseComponent-one",
-    meta: { isShowSideBar: true, title: "基础组件", icon: "Help" },
+    meta: { isShowSideBar: true, title: "其他组件", icon: "Help" },
     children: [
       {
         path: "/baseComponent/baseComponent-one",
         name: "baseComponent-one",
         component: () => import("@/views/baseComponent/index.vue"),
-        meta: { isShowSideBar: true, title: "基础组件", icon: "Help" },
+        meta: { isShowSideBar: true, title: "其他组件", icon: "Help" },
       },
     ],
   },

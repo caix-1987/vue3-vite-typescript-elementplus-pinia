@@ -28,7 +28,7 @@ const v3SidebarMenuActiveTextColor = getCssVariableValue(
     <header class="sideBarHeader">
       <svg-icon name="vite" font-size="32"></svg-icon>
       <transition name="fade-transform" mode="out-in">
-        <span v-if="!isOpen">caix_管理系统</span>
+        <span v-if="!isOpen">xxx 管理系统</span>
       </transition>
     </header>
     <el-scrollbar wrap-class="scrollbar-wrapper">

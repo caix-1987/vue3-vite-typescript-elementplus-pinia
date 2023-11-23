@@ -2,7 +2,7 @@
 
 <template>
   <div class="app-baseComponent">
-    <el-card>基础组件待更新 ...... </el-card>
+    <el-card>其他组件待更新 ...... </el-card>
   </div>
 </template>
 

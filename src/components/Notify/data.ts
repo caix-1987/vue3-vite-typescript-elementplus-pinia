@@ -43,13 +43,6 @@ export const todoData: IListItem[] = [
   {
     title: "任务名称 - caix-1987: vue3 + vite + element-plus + pinia",
     description: "一个开源免费的中后台管理系统基础解决方案",
-    extra: "已完成",
-    status: "success",
-    avatar: "vite",
-  },
-  {
-    title: "任务名称 - caix-1987: vue3 + vite + element-plus + pinia",
-    description: "一个开源免费的中后台管理系统基础解决方案",
     extra: "已结束",
     status: "danger",
     avatar: "vite",

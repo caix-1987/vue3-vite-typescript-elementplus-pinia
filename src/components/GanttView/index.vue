@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { onMounted, ref } from "vue";
 import { type IGanttList } from "@/components/GanttView/data";
-import { getGanttDataApi } from "@/api/gantt";
+import { mockGanttList } from "@/mock";
 import GanttUtil, { type IGanttInitData } from "@/components/GanttView/Gantt";
 import GanttBar from "@/components/GanttView/GanttBar.vue";
 
@@ -13,17 +13,21 @@ const tableData = ref<IGanttList[]>([]);
 const min_max_data = ref();
 const ganttEndInitData = ref<IGanttInitData[]>([]);
 const ganttIntervalDay = ref<number>(0);
-const loading = ref<boolean>(false);
 const radio_1 = ref("1");
 const radio_2 = ref("2");
 const radio_3 = ref("3");
 const getGanttList = async () => {
   try {
-    loading.value = true;
-    const result: any = await getGanttDataApi();
+    const result = await mockGanttList();
     tableData.value = result.data;
 
     min_max_data.value = await GanttUtil.getMinAndMaxDate(tableData.value);
+    console.log(
+      "min_max_data.value",
+      min_max_data.value,
+      min_max_data.value.minDate,
+      min_max_data.value.maxDate
+    );
 
     ganttEndInitData.value = await GanttUtil.initGanttData(
       min_max_data.value.minDate,
@@ -34,10 +38,11 @@ const getGanttList = async () => {
       tableData.value,
       min_max_data.value
     );
+
+    console.log("ganttEndInitData.value", ganttEndInitData.value);
+    console.log("endTableData", tableData.value);
   } catch (e) {
     console.log("e", e);
-  } finally {
-    loading.value = false;
   }
 };
 
@@ -56,7 +61,7 @@ const selectGanttType = (val: string | number | boolean) => {
 };
 
 onMounted(() => {
-  getGanttList();
+  console.log(getGanttList());
 });
 </script>
 
@@ -77,7 +82,6 @@ onMounted(() => {
       :tree-props="{ children: 'children', hasChildren: 'hasChildren' }"
       default-expand-all
       style="width: 100%; margin-bottom: 20px"
-      v-loading="loading"
     >
       <el-table-column
         fixed
