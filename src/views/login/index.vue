@@ -38,7 +38,7 @@ const submit = (formEl: FormInstance | undefined) => {
       <img src="@/assets/caix.png" alt="" />
       <div>
         <span>
-          一个基于
+          这是一个基于
           <i> vue3 + vite + typeScript + elementPlus + pinia + ... </i>
           中后台开源管理系统，无论学习还是工作，愿它能给您带来帮助 💪 !
         </span>
@@ -107,7 +107,7 @@ const submit = (formEl: FormInstance | undefined) => {
     width: 360px;
     margin: 0 auto;
     padding-top: 40px;
-    padding-left: 20px;
+    padding-left: 22px;
     .input {
       height: 48px;
     }
